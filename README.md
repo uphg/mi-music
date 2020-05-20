@@ -2,9 +2,9 @@
 
 https://chenning02.github.io/git-mi_music/dist/index.html 
 
+**效果图**
 
-
-开一个测试服务器
+开启一个测试服务器
 
 ```
 npx parcel index.html

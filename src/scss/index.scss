@@ -91,6 +91,35 @@ svg {
         .panel-lyrics {
             width: 100vw;
             height: 100%;
+            box-shadow: 0px 0px 30px 20px #ebeae9 inset;
+            position: relative;
+            .shadow {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100%;
+                box-shadow: 0px 0px 30px 20px #ebeae9;
+                // background-color: #000;
+                &::after {
+                    display: block;
+                    width: 100%;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    box-shadow: 0px 0px 30px 50px #ebeae9;
+                }
+                &::before{
+                    display: block;
+                    width: 100%;
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    box-shadow: 0px 0px 30px 50px #ebeae9;
+                }
+            }
             .container {
                 transition:  all 0.3s;
                 p {
