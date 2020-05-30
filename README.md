@@ -15,6 +15,14 @@ npx parcel index.html
 npx parcel build index.html
 ```
 
+注意：上传到 GitHub 时要执行这句代码，来更改路径问题，不然 GitHub 预览没有效果
+
+```sh
+npx parcel build index.html --public-url ./
+```
+
+> 更改之前最好删除之前的 dist 文件夹
+
 处理异常
 
 ```js
