@@ -1,6 +1,6 @@
-## 说明
+# 仿小米音乐播放器
 
-一个简单的音乐播放器，模仿小米音乐播放器的UI，功能待完善
+纯原生JS开发的一个简单的音乐播放器，模仿小米音乐播放器的UI，功能待完善
 
 项目预览：[https://chenning02.github.io/git-mi_music/dist/index.html](https://chenning02.github.io/git-mi_music/dist/index.html)
 
