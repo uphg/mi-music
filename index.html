@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>我的音乐</title>
-    <link rel="stylesheet" href="./src/scss/index.scss">
+    <link rel="stylesheet" href="./src/scss/mobile.scss" media="(max-width: 560px)">
+    <link rel="stylesheet" href="./src/scss/desktop.scss" media="(min-width: 560px)">
 </head>
 <body>
     <div id="player">
@@ -72,6 +73,20 @@
                 </svg>
             </div>
         </footer>
+    </div>
+    <div class="QRcode">
+        <div class="child">
+            <div class="text">
+                <h3>请扫码使用手机设备查看</h3>
+                <img src="./img/mobile.png" alt="">
+            </div>
+        </div>
+        <div class="collapse">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+                <use xlink:href="#icon-icon-test"></use>
+            </svg>
+            <span class="content">收起</span>
+        </div>
     </div>
     <script src="./src/js/main.js"></script>
 </body>

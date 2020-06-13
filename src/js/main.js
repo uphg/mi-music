@@ -13,6 +13,7 @@ class Player {
         this.lyricIndex = -1
         this.start()
         this.bind()
+        this.upQRcode()
     }
     start() {
         fetch('https://chenning02.github.io/Document/song/mini-music/music_list.json')
@@ -161,6 +162,25 @@ class Player {
         let seconds = parseInt(secondsTotal % 60)
         seconds = seconds >= 10 ? '' + seconds : '0' + seconds
         return minutes + ':' + seconds
+    }
+    upQRcode(){
+        let open = false
+        let parent = document.querySelector('.QRcode')
+        let child = parent.querySelector('.child')
+        let collapse = parent.querySelector('.collapse')
+        let content = collapse.querySelector('.content')
+        collapse.onclick = function(){
+            open = !open
+            collapse.classList.toggle('active')
+            child.classList.toggle('active')
+            parent.classList.toggle('active')
+            if(open){
+                content.innerHTML = '展开'
+            }else{
+                content.innerHTML = '收起'
+            }
+        }
+        console.log(parent)
     }
 }
 
