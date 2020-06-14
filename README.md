@@ -18,6 +18,12 @@ npm install
 npx parcel index.html
 ```
 
+测试报错可以运行
+
+```sh
+npx parcel index.html --no-cache
+```
+
 **打包**
 
 ```sh

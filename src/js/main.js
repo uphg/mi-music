@@ -65,7 +65,7 @@ class Player {
                     ul.appendChild(li);
                 });
                 ancestor.$('.playlist').appendChild(ul)
-
+                // 歌曲列表添加点击事件
                 let liList = ancestor.$$('.playlist li')
                 let liArray = [...liList]
                 liArray[0].classList.add('active')
@@ -79,14 +79,14 @@ class Player {
                         // 播放指定音乐
                         ancestor.audio.src = ancestor.songList[index].url
                         openClassName()
-
+                        // 切换歌曲数据
                         let songObj = ancestor.songList[index]
                         ancestor.$('.songTop > h2').innerText = songObj.title
                         ancestor.$('.songTop > p').innerText = songObj.author
                         ancestor.$('.songMain .square img').src = songObj.img
                         ancestor.audio.src = songObj.url
                         ancestor.audio.onloadedmetadata = () => ancestor.$('.time-end').innerText = ancestor.formateTime(ancestor.audio.duration)
-
+                        // 切换歌词
                         fetch(ancestor.songList[index].lyric)
                             .then(res => res.json())
                             .then(data => {
@@ -97,10 +97,12 @@ class Player {
                         ancestor.audio.play()
                     })
                 });
-                
+                // 禁止事件冒泡
+                console.log(playlistUl)
+                playlistUl.addEventListener('click', function(e){
+                    e.stopPropagation()
+                })
             })
-
-
 
         // 播放/暂停 按钮点击事件
         playerStart.onclick = function () {
@@ -132,7 +134,6 @@ class Player {
         }
         // 下一首 按钮事件
         next.onclick = () => {
-
             ancestor.currentIndex = (ancestor.currentIndex + 1) % ancestor.songList.length
             this.audio.src = ancestor.songList[ancestor.currentIndex].url
             openClassName()
@@ -185,6 +186,7 @@ class Player {
         }
         // 自动播放下一首
         ancestor.audio.addEventListener("ended", function(){
+            // 判断歌曲播放方式：顺序 0，随机 1，单曲循环 2
             if(randomOpen===0){
                 // 顺序播放
                 ancestor.currentIndex = (ancestor.currentIndex + 1) % ancestor.songList.length
@@ -200,7 +202,7 @@ class Player {
                 // 单曲循环
                 ancestor.currentIndex = ancestor.currentIndex
             }
-            
+            // 切换歌曲信息
             ancestor.audio.src = ancestor.songList[ancestor.currentIndex].url
             openClassName()
             ancestor.renderSong()
@@ -223,7 +225,6 @@ class Player {
                 random.querySelector('use').setAttribute('xlink:href', '#icon-Single')
             }
         }
-
     }
     /* 修改歌曲信息 */
     renderSong() {
@@ -290,10 +291,8 @@ class Player {
         this.$('.panel-lyrics .container').innerHTML = ''
         this.$('.panel-lyrics .container').appendChild(fragment)
     }
-
     // 歌词滚动
     setLineToCenter(node) {
-        // let offset = node.offsetTop - this.$('.panel-lyrics').offsetHeight / 2
         let offset = node.offsetTop - this.$('.panel-lyrics').offsetHeight / 3
         offset = offset > 0 ? offset : 0
         this.$('.panel-lyrics > .container').style.transform = `translateY(-${offset}px)`
