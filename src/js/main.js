@@ -98,7 +98,6 @@ class Player {
                     })
                 });
                 // 禁止事件冒泡
-                console.log(playlistUl)
                 playlistUl.addEventListener('click', function(e){
                     e.stopPropagation()
                 })
@@ -154,7 +153,7 @@ class Player {
                     // Handle this async error
                     // console.log(e)
                 }
-            }, 1);
+            }, 0);
             ancestor.setProgerssBar()
         }
         // 滑动切换歌词/封面
