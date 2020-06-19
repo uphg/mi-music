@@ -2,6 +2,11 @@ $black: #191918;
 $grey: #888786;
 $dark-grey: #636261;
 $light-grey:#ebeae9;
+$default-size: 18px;
+$mini-size: 16px;
+$author-size: 14px;
+$lyrics-margin: 1.4em 0;
+$playlist-padding: 0.8em 1.2em;
 
 * {
     margin: 0;
@@ -25,17 +30,18 @@ svg {
     height: 100vh;
     background-color: $light-grey;
     overflow: hidden;
+    font-size: $default-size;
     .songTop {
         padding-top: 20px;
         padding-bottom: 3%;
         h2 {
             font-weight: normal;
-            font-size: 18px;
+            font-size: 1.2em;
             color: $black;
             text-align: center;
         }
         p {
-            font-size: 16px;
+            font-size: $author-size;
             color: $grey;
             text-align: center;
             padding-top: 10px;
@@ -75,20 +81,19 @@ svg {
             }
             .mini-lyric {
                 height: 4em;
-                padding-top: 1.8em;
+                padding-top: 1.6em;
                 p {
                     padding-left: 2em;
                     padding-right: 2em;
                     text-align: center;
-                    font-size: 14px;
+                    font-size: $mini-size;
                     color: $grey;
-                    margin: 0.5em 0;
+                    margin: 1em 0;
                     &.current {
                         color: #000;
                     }
                 }
             }
-            
         }
         .panel-lyrics {
             width: 100vw;
@@ -116,7 +121,7 @@ svg {
                     width: 100%;
                     content: '';
                     position: absolute;
-                    bottom: -2px;
+                    bottom: -1px;
                     left: 0;
                     box-shadow: 0px 0px 30px 50px #ebeae9;
                 }
@@ -127,9 +132,9 @@ svg {
                     padding-left: 2em;
                     padding-right: 2em;
                     text-align: center;
-                    font-size: 14px;
+                    font-size: $mini-size;
                     color: $grey;
-                    margin: 1em 0;
+                    margin: $lyrics-margin;
                     &.current {
                         color: #000;
                     } 
@@ -251,30 +256,35 @@ svg {
             &::before {
                 content: '𝌆 播放列表';
                 display: block;
-                padding: 0.8em 1.4em;
+                padding: $playlist-padding;
                 font-weight: bold;
             }
             li {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 0.8em 1.4em;
+                padding: $playlist-padding;
                 .playli-name {
-                    font-size: 16px;
+                    font-size: $mini-size;
                     font-weight: normal;
                     .playli-author {
                         font-size: 14px;
                         color: $grey;
                     }
                 }
-                .playli-open {
-        
-                }
                 &.active {
                     color: #e97291;
                 }
             }
         }
+    }
+}
+
+@media (max-width: 320px) {
+    .mini-lyric {
+        p:last-child {
+            display: none;
+        }        
     }
 }
 

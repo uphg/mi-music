@@ -240,7 +240,7 @@ body {
         ul {
             transition: all .6s;
             width: 400px;
-            max-height: 50vh;
+            // max-height: 50vh;
             padding: 1em 0;
             position: absolute;
             bottom: 0;
@@ -252,6 +252,12 @@ body {
             background-color: #fff;
             &.active {
                 margin-bottom: 0;
+            }
+            &::before {
+                content: '𝌆 播放列表';
+                display: block;
+                padding: 0.8em 1.4em;
+                font-weight: bold;
             }
             li {
                 cursor: pointer;
