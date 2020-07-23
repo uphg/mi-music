@@ -4,8 +4,8 @@
 
 ## 项目预览
 
-- 国内（码云）：[https://lv1024.github.io/mi-music/dist/index.html](https://lv1024.github.io/mi-music/dist/index.html)
-- 国外（GitHub）：[https://lv1024.gitee.io/mi-music/dist/index.html](https://lv1024.gitee.io/mi-music/dist/index.html)
+- 国内（码云）：[https://uphg.github.io/mi-music/dist/index.html](https://uphg.github.io/mi-music/dist/index.html)
+- 国外（GitHub）：[https://uphg.gitee.io/mi-music/dist/index.html](https://uphg.gitee.io/mi-music/dist/index.html)
 
 ## 运行
 
