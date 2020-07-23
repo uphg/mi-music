@@ -2,7 +2,10 @@
 
 纯原生JS开发的一个简单的音乐播放器，模仿小米音乐播放器的UI，功能待完善
 
-项目预览：[https://chenning02.github.io/git-mi_music/dist/index.html](https://chenning02.github.io/git-mi_music/dist/index.html)
+## 项目预览
+
+- 国内（码云）：[https://lv1024.github.io/mi-music/dist/index.html](https://lv1024.github.io/mi-music/dist/index.html)
+- 国外（GitHub）：[https://lv1024.gitee.io/mi-music/dist/index.html](https://lv1024.gitee.io/mi-music/dist/index.html)
 
 ## 运行
 
