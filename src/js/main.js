@@ -17,7 +17,7 @@ class Player {
     }
     // 获取数据
     start() {
-        fetch('https://chenning02.github.io/Document/song/mini-music/music_list.json')
+        fetch('https://uphg.github.io/Document/song/mini-music/music_list.json')
             .then(res => res.json())
             .then(data => {
                 this.songList = data
@@ -49,7 +49,7 @@ class Player {
         let playlistUl
 
         // 歌曲列表切换
-        fetch('https://chenning02.github.io/Document/song/mini-music/music_list.json')
+        fetch('https://uphg.github.io/Document/song/mini-music/music_list.json')
             .then(res => res.json())
             .then(data => {
                 let playlist = data
